@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_practise/counter_app/counter_screen.dart';
+import 'package:riverpod_practise/todo_app/todo_screen.dart';
 
 void main()=> runApp(const ProviderScope(child: MyApp()));
 
@@ -35,6 +36,14 @@ class _MyWidgetState extends State<MyWidget> {
               onPressed: ()=>Navigator.push(context, CupertinoPageRoute(builder: (context)=> const CounterScreen())),
               icon: const Icon(Icons.arrow_forward),
               label: const Text("Counter App")
+          ),
+
+          const SizedBox(height: 10,),
+
+          ElevatedButton.icon(
+              onPressed: ()=>Navigator.push(context, CupertinoPageRoute(builder: (context)=> const TodoScreen())),
+              icon: const Icon(Icons.arrow_forward),
+              label: const Text("Todo App")
           )
 
         ],),
